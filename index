@@ -473,20 +473,19 @@
 
     <!-- Firebase SDK -->
     <script type="module">
-        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
-        import { getFirestore, collection, addDoc } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js";
 
         // ========================================
         // FIREBASE_CONFIG - CONFIGURE AQUI!
         // ========================================
         const firebaseConfig = {
-            apiKey: "SUA_API_KEY_AQUI",
-            authDomain: "seu-projeto.firebaseapp.com",
-            projectId: "seu-projeto-id",
-            storageBucket: "seu-projeto.appspot.com",
-            messagingSenderId: "123456789",
-            appId: "1:123456789:web:abcdef"
-        };
+    apiKey: "AIzaSyDAS6c3o0ozy87FYml06aA9ObTSFDZOoI4",
+    authDomain: "candleversetest.firebaseapp.com",
+    projectId: "candleversetest",
+    storageBucket: "candleversetest.firebasestorage.app",
+    messagingSenderId: "919330781977",
+    appId: "1:919330781977:web:01d25dacc11a2b704fa388"
+  };
 
         // Inicializar Firebase
         let app, db;
