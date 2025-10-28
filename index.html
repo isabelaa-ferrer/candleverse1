@@ -355,7 +355,7 @@
     <div class="container">
         <header>
             <h1>🕯️ CandleVerse</h1>
-            <p class="subtitle">Personalize sua vela dos sonhos</p>
+            <p class="subtitle">Faça sua luz</p>
         </header>
 
         <div class="firebase-warning" id="firebaseWarning">
@@ -473,35 +473,38 @@
 
     <!-- Firebase SDK -->
     <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js";
+    <!-- Firebase SDK -->
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js";
+import { getFirestore, addDoc, collection } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-firestore.js";
 
-        // ========================================
-        // FIREBASE_CONFIG - CONFIGURE AQUI!
-        // ========================================
-        const firebaseConfig = {
-    apiKey: "AIzaSyDAS6c3o0ozy87FYml06aA9ObTSFDZOoI4",
-    authDomain: "candleversetest.firebaseapp.com",
-    projectId: "candleversetest",
-    storageBucket: "candleversetest.firebasestorage.app",
-    messagingSenderId: "919330781977",
-    appId: "1:919330781977:web:01d25dacc11a2b704fa388"
-  };
+// ===============================
+// Inicialização segura via /api
+// ===============================
+async function initFirebase() {
+  try {
+    // Busca as chaves de forma segura da API
+    const res = await fetch('/api/firebase-config');
+    const firebaseConfig = await res.json();
 
-        // Inicializar Firebase
-        let app, db;
-        try {
-            app = initializeApp(firebaseConfig);
-            db = getFirestore(app);
-            document.getElementById('firebaseWarning').style.display = 'none';
-            console.log('✅ Firebase inicializado com sucesso');
-        } catch (error) {
-            console.error('❌ Erro ao inicializar Firebase:', error);
-        }
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
 
-        // Tornar db global para as funções
-        window.db = db;
-        window.addDoc = addDoc;
-        window.collection = collection;
+    document.getElementById('firebaseWarning').style.display = 'none';
+    console.log('✅ Firebase inicializado com sucesso');
+    
+    // Torna global
+    window.db = db;
+    window.addDoc = addDoc;
+    window.collection = collection;
+  } catch (error) {
+    console.error('❌ Erro ao inicializar Firebase:', error);
+    alert('Erro ao conectar com o Firebase. Verifique a configuração.');
+  }
+}
+
+// Inicia Firebase quando a página carrega
+initFirebase();
     </script>
 
     <script>
