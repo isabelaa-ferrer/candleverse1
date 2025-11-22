@@ -1,11 +1,13 @@
+
+
+Em sáb., 22 de nov. de 2025 às 20:40, Isabela Ferrer <isabelaferrer007@gmail.com> escreveu:
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#ff6ec7">
     <title>CandleVerse - Personalize sua Vela</title>
-    <link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoiQ2FuZGxlVmVyc2UiLCJzaG9ydF9uYW1lIjoiQ2FuZGxlVmVyc2UiLCJzdGFydF91cmwiOiIvIiwiZGlzcGxheSI6InN0YW5kYWxvbmUiLCJiYWNrZ3JvdW5kX2NvbG9yIjoiI2ZmZmZmZiIsInRoZW1lX2NvbG9yIjoiI2ZmNmVjNyIsImljb25zIjpbeyJzcmMiOiJkYXRhOmltYWdlL3N2Zyt4bWwsJTNDc3ZnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zycgdmlld0JveD0nMCAwIDEwMCAxMDAnJTNFJTNDcmVjdCBmaWxsPSclMjNmZjZlYzcnIHdpZHRoPScxMDAnIGhlaWdodD0nMTAwJy8lM0UlM0MvJTNFJTNDL3N2ZyUzRSIsInNpemVzIjoiMTkyeDE5MiIsInR5cGUiOiJpbWFnZS9zdmcreG1sIn1dfQ==">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,22 +15,12 @@
             box-sizing: border-box;
         }
 
-        :root {
-            --primary-pink: #ff6ec7;
-            --lilac: #b283ff;
-            --soft-orange: #ffb380;
-            --error-red: #ff4444;
-            --text-dark: #333;
-            --bg-light: #fff5f9;
-            --shadow: 0 4px 12px rgba(255, 110, 199, 0.15);
-        }
-
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            background: linear-gradient(135deg, var(--bg-light) 0%, #fff 100%);
-            color: var(--text-dark);
-            min-height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #f3ecff 0%, #faf7ff 100%);
             padding: 20px;
+            min-height: 100vh;
+            color: #333;
         }
 
         .container {
@@ -42,8 +34,8 @@
         }
 
         h1 {
-            font-size: clamp(2rem, 5vw, 3rem);
-            background: linear-gradient(135deg, var(--primary-pink) 0%, var(--lilac) 100%);
+            font-size: 3rem;
+            background: linear-gradient(135deg, #ff6ec7 0%, #b283ff 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -51,8 +43,10 @@
         }
 
         .subtitle {
-            color: #666;
-            font-size: 1.1rem;
+            font-family: 'Poppins', sans-serif;
+            color: #ffb380;
+            font-size: 1.3rem;
+            font-weight: 600;
         }
 
         .main-content {
@@ -72,16 +66,13 @@
             background: white;
             border-radius: 20px;
             padding: 30px;
-            box-shadow: var(--shadow);
+            box-shadow: 0 4px 12px rgba(255, 110, 199, 0.15);
         }
 
         .section-title {
             font-size: 1.5rem;
-            color: var(--primary-pink);
+            color: #ff6ec7;
             margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
         }
 
         .form-group {
@@ -92,7 +83,6 @@
             display: block;
             margin-bottom: 8px;
             font-weight: 600;
-            color: var(--text-dark);
         }
 
         select, input {
@@ -107,23 +97,8 @@
 
         select:focus, input:focus {
             outline: none;
-            border-color: var(--primary-pink);
+            border-color: #ff6ec7;
             box-shadow: 0 0 0 3px rgba(255, 110, 199, 0.1);
-        }
-
-        select.error, input.error {
-            border-color: var(--error-red);
-        }
-
-        .error-message {
-            color: var(--error-red);
-            font-size: 0.875rem;
-            margin-top: 5px;
-            display: none;
-        }
-
-        .error-message.show {
-            display: block;
         }
 
         .mockup-container {
@@ -132,84 +107,101 @@
             align-items: center;
             justify-content: center;
             min-height: 400px;
-            position: relative;
         }
 
         .candle-mockup {
             position: relative;
             width: 200px;
-            height: 300px;
+            height: 320px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1));
+            filter: drop-shadow(0 15px 25px rgba(0,0,0,0.2));
         }
 
         .flame {
-            width: 20px;
-            height: 30px;
-            background: linear-gradient(to top, var(--soft-orange), #ffeb3b, transparent);
+            width: 25px;
+            height: 35px;
+            background: radial-gradient(ellipse at center bottom, #ff6b00 0%, #ffaa00 30%, #ffed4e 60%, rgba(255,237,78,0.3) 100%);
             border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-            animation: flicker 2s ease-in-out infinite;
+            animation: flicker 1.5s ease-in-out infinite;
             margin-bottom: 5px;
+            box-shadow: 0 0 20px rgba(255, 170, 0, 0.8);
         }
 
         @keyframes flicker {
-            0%, 100% { transform: scale(1) translateY(0); opacity: 1; }
-            50% { transform: scale(1.05) translateY(-2px); opacity: 0.9; }
+            0%, 100% { transform: scale(1) translateY(0); }
+            50% { transform: scale(1.05) translateY(-2px); }
         }
 
         .wick {
-            width: 3px;
-            height: 15px;
-            background: #333;
-            margin-bottom: -5px;
+            width: 4px;
+            height: 18px;
+            background: linear-gradient(to bottom, #1a1a1a 0%, #4a4a4a 100%);
+            margin-bottom: -8px;
+            border-radius: 2px;
         }
 
         .jar {
             width: 180px;
-            height: 220px;
-            background: var(--primary-pink);
-            border-radius: 10px 10px 15px 15px;
+            height: 230px;
+            background-color: #ff6ec7;
+            border-radius: 25px 25px 30px 30px;
             position: relative;
-            opacity: 0.9;
-            box-shadow: inset 0 -20px 30px rgba(0,0,0,0.1);
+            box-shadow: 
+                inset 0 -20px 30px rgba(0,0,0,0.2),
+                inset 15px 0 25px rgba(255,255,255,0.2),
+                inset -15px 0 25px rgba(0,0,0,0.15),
+                0 15px 35px rgba(0,0,0,0.25);
+            overflow: hidden;
+            transition: background-color 0.4s ease;
         }
 
         .jar::before {
             content: '';
             position: absolute;
-            top: 10px;
-            left: 10px;
-            right: 10px;
-            height: 30px;
-            background: rgba(255,255,255,0.3);
-            border-radius: 5px;
+            top: 15px;
+            left: 15px;
+            right: 15px;
+            height: 35px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.1) 100%);
+            border-radius: 8px;
+        }
+
+        .jar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 15%;
+            width: 40%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.15) 50%, transparent 100%);
         }
 
         .jar-label {
             position: absolute;
-            bottom: 20px;
+            bottom: 25px;
             left: 20px;
             right: 20px;
-            background: rgba(255,255,255,0.9);
-            padding: 10px;
+            background: rgba(255,255,255,0.95);
+            padding: 12px;
             border-radius: 8px;
             text-align: center;
             font-size: 0.875rem;
-            color: var(--text-dark);
+            font-weight: 600;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
         }
 
         .specs {
             margin-top: 20px;
             padding: 15px;
-            background: var(--bg-light);
+            background: #f3ecff;
             border-radius: 12px;
             font-size: 0.9rem;
         }
 
         .specs strong {
-            color: var(--primary-pink);
+            color: #ff6ec7;
         }
 
         .button-group {
@@ -234,30 +226,10 @@
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        button::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.3);
-            transform: translate(-50%, -50%);
-            transition: width 0.6s, height 0.6s;
-        }
-
-        button:hover::before {
-            width: 300px;
-            height: 300px;
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, var(--primary-pink) 0%, var(--lilac) 100%);
+            background: linear-gradient(135deg, #ff6ec7 0%, #b283ff 100%);
             color: white;
         }
 
@@ -268,17 +240,17 @@
 
         .btn-secondary {
             background: white;
-            color: var(--primary-pink);
-            border: 2px solid var(--primary-pink);
+            color: #ff6ec7;
+            border: 2px solid #ff6ec7;
         }
 
         .btn-secondary:hover {
-            background: var(--primary-pink);
+            background: #ff6ec7;
             color: white;
         }
 
         .btn-tertiary {
-            background: var(--soft-orange);
+            background: #ffb380;
             color: white;
         }
 
@@ -292,31 +264,6 @@
             cursor: not-allowed;
         }
 
-        .loading {
-            display: none;
-            text-align: center;
-            padding: 20px;
-        }
-
-        .loading.show {
-            display: block;
-        }
-
-        .spinner {
-            border: 3px solid #f3f3f3;
-            border-top: 3px solid var(--primary-pink);
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 10px;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
         .success-message {
             display: none;
             background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
@@ -325,29 +272,62 @@
             border-radius: 12px;
             text-align: center;
             margin-top: 20px;
-            animation: slideIn 0.5s ease;
         }
 
         .success-message.show {
             display: block;
         }
 
-        @keyframes slideIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
+        .share-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
         }
 
-        .firebase-warning {
-            background: #fff3cd;
-            border: 2px solid #ffc107;
-            border-radius: 12px;
-            padding: 15px;
+        .share-modal.show {
+            display: flex;
+        }
+
+        .share-content {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+        }
+
+        .share-content h3 {
+            color: #ff6ec7;
             margin-bottom: 20px;
-            font-size: 0.9rem;
         }
 
-        .firebase-warning strong {
-            color: #856404;
+        .share-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .error-message {
+            color: #ff4444;
+            font-size: 0.875rem;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .error-message.show {
+            display: block;
+        }
+
+        select.error, input.error {
+            border-color: #ff4444;
         }
     </style>
 </head>
@@ -358,12 +338,7 @@
             <p class="subtitle">Faça sua luz</p>
         </header>
 
-        <div class="firebase-warning" id="firebaseWarning">
-            <strong>⚠️ Configuração necessária:</strong> Configure seu Firebase no código (busque por "FIREBASE_CONFIG" no HTML).
-        </div>
-
         <div class="main-content">
-            <!-- Personalização -->
             <div class="card">
                 <h2 class="section-title">✨ Personalize</h2>
                 
@@ -412,7 +387,6 @@
                 </div>
             </div>
 
-            <!-- Mockup -->
             <div class="card">
                 <h2 class="section-title">🎨 Pré-visualização</h2>
                 <div class="mockup-container">
@@ -420,10 +394,10 @@
                         <div class="flame"></div>
                         <div class="wick"></div>
                         <div class="jar" id="jarPreview">
-                            <div class="jar-label" id="jarLabel">Sua Vela Personalizada</div>
+                            <div class="jar-label" id="jarLabel">Lavanda Relaxante</div>
                         </div>
                     </div>
-                    <div class="specs" id="specs">
+                    <div class="specs">
                         <strong>Aroma:</strong> <span id="aromaSpec">Lavanda Relaxante</span><br>
                         <strong>Recipiente:</strong> <span id="containerSpec">Vidro Clássico</span><br>
                         <strong>Tamanho:</strong> <span id="sizeSpec">Pequeno (100g)</span>
@@ -432,7 +406,6 @@
             </div>
         </div>
 
-        <!-- Dados do usuário e ações -->
         <div class="card">
             <h2 class="section-title">💾 Salvar Design</h2>
             
@@ -445,7 +418,7 @@
             <div class="form-group">
                 <label for="userPhone">Telefone *</label>
                 <input type="tel" id="userPhone" placeholder="(00) 00000-0000">
-                <div class="error-message" id="userPhoneError">Insira um telefone válido (mínimo 10 dígitos)</div>
+                <div class="error-message" id="userPhoneError">Insira um telefone válido</div>
             </div>
 
             <div class="form-group">
@@ -454,56 +427,28 @@
                 <div class="error-message" id="userEmailError">Insira um e-mail válido</div>
             </div>
 
-            <div class="loading" id="loading">
-                <div class="spinner"></div>
-                <p>Salvando seu design...</p>
-            </div>
-
             <div class="success-message" id="successMessage">
-                ✅ Design salvo com sucesso! ID: <strong id="designId"></strong>
+                ✅ Design salvo com sucesso!
             </div>
 
             <div class="button-group">
                 <button class="btn-primary" id="saveBtn" onclick="saveDesign()">💾 Salvar Design</button>
-                <button class="btn-secondary" id="shareBtn" onclick="shareDesign()" disabled>📤 Compartilhar</button>
+                <button class="btn-secondary" id="shareBtn" onclick="openShareModal()" disabled>📤 Compartilhar</button>
                 <button class="btn-tertiary" onclick="resetDesign()">🔄 Nova Vela</button>
             </div>
         </div>
     </div>
 
-    <!-- Firebase SDK -->
-<script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js";
-import { getFirestore, addDoc, collection } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-firestore.js";
-
-// ===============================
-// Inicialização segura via /api
-// ===============================
-async function initFirebase() {
-  try {
-    // Busca as chaves de forma segura da API
-    const res = await fetch('/api/firebase-config');
-    const firebaseConfig = await res.json();
-
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app);
-
-    document.getElementById('firebaseWarning').style.display = 'none';
-    console.log('✅ Firebase inicializado com sucesso');
-    
-    // Torna global
-    window.db = db;
-    window.addDoc = addDoc;
-    window.collection = collection;
-  } catch (error) {
-    console.error('❌ Erro ao inicializar Firebase:', error);
-    alert('Erro ao conectar com o Firebase. Verifique a configuração.');
-  }
-}
-
-// Inicia Firebase quando a página carrega
-initFirebase();
-    </script>
+    <div class="share-modal" id="shareModal">
+        <div class="share-content">
+            <h3>📤 Compartilhar via WhatsApp</h3>
+            <p>Seu design será compartilhado no WhatsApp</p>
+            <div class="share-buttons">
+                <button class="btn-secondary" onclick="closeShareModal()">Cancelar</button>
+                <button class="btn-primary" onclick="shareViaWhatsApp()">Enviar</button>
+            </div>
+        </div>
+    </div>
 
     <script>
         let savedDesignId = null;
@@ -520,14 +465,14 @@ initFirebase();
             const container = document.getElementById('container').value;
             const size = document.getElementById('size').value;
 
-            document.getElementById('jarPreview').style.background = color;
+            // Atualizar cor da vela
+            document.getElementById('jarPreview').style.backgroundColor = color;
             document.getElementById('aromaSpec').textContent = aroma;
             document.getElementById('containerSpec').textContent = container;
             document.getElementById('sizeSpec').textContent = size;
             document.getElementById('jarLabel').textContent = aroma;
         }
 
-        // Validações
         function validateEmail(email) {
             const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             return re.test(email);
@@ -551,15 +496,13 @@ initFirebase();
             }
         }
 
-        // Salvar design
-        async function saveDesign() {
+        function saveDesign() {
             const userName = document.getElementById('userName').value.trim();
             const userPhone = document.getElementById('userPhone').value.trim();
             const userEmail = document.getElementById('userEmail').value.trim();
 
             let hasError = false;
 
-            // Validar nome
             if (!userName) {
                 showError('userName', true);
                 hasError = true;
@@ -567,7 +510,6 @@ initFirebase();
                 showError('userName', false);
             }
 
-            // Validar telefone
             if (!validatePhone(userPhone)) {
                 showError('userPhone', true);
                 hasError = true;
@@ -575,7 +517,6 @@ initFirebase();
                 showError('userPhone', false);
             }
 
-            // Validar email
             if (!validateEmail(userEmail)) {
                 showError('userEmail', true);
                 hasError = true;
@@ -587,110 +528,63 @@ initFirebase();
                 return;
             }
 
-            if (!window.db) {
-                alert('⚠️ Firebase não configurado! Configure o Firebase no código.');
-                return;
-            }
+            // Simular salvamento
+            savedDesignId = 'VELA' + Date.now();
+            
+            document.getElementById('successMessage').classList.add('show');
+            document.getElementById('shareBtn').disabled = false;
 
-            // Mostrar loading
-            document.getElementById('loading').classList.add('show');
-            document.getElementById('saveBtn').disabled = true;
-
-            try {
-                const designData = {
-                    userName,
-                    userPhone,
-                    userEmail,
-                    color: document.getElementById('color').value,
-                    colorName: document.getElementById('color').options[document.getElementById('color').selectedIndex].text,
-                    aroma: document.getElementById('aroma').value,
-                    container: document.getElementById('container').value,
-                    size: document.getElementById('size').value,
-                    createdAt: new Date().toISOString()
-                };
-
-                const docRef = await window.addDoc(window.collection(window.db, 'designs'), designData);
-                savedDesignId = docRef.id;
-
-                // Esconder loading
-                document.getElementById('loading').classList.remove('show');
-                
-                // Mostrar sucesso
-                document.getElementById('designId').textContent = savedDesignId;
-                document.getElementById('successMessage').classList.add('show');
-                
-                // Habilitar botão compartilhar
-                document.getElementById('shareBtn').disabled = false;
-
-                console.log('✅ Design salvo com ID:', savedDesignId);
-            } catch (error) {
-                console.error('❌ Erro ao salvar:', error);
-                document.getElementById('loading').classList.remove('show');
-                document.getElementById('saveBtn').disabled = false;
-                alert('❌ Erro ao salvar design: ' + error.message);
-            }
+            console.log('✅ Design salvo com ID:', savedDesignId);
         }
 
-        // Compartilhar design
-        function shareDesign() {
+        function openShareModal() {
+            if (!savedDesignId) {
+                alert('⚠️ Salve o design primeiro!');
+                return;
+            }
+            document.getElementById('shareModal').classList.add('show');
+        }
+
+        function closeShareModal() {
+            document.getElementById('shareModal').classList.remove('show');
+        }
+
+        function shareViaWhatsApp() {
             if (!savedDesignId) {
                 alert('⚠️ Salve o design primeiro!');
                 return;
             }
 
-            const designUrl = window.location.origin + window.location.pathname + '?design=' + savedDesignId;
             const userName = document.getElementById('userName').value;
             const aroma = document.getElementById('aroma').value;
             const colorName = document.getElementById('color').options[document.getElementById('color').selectedIndex].text;
 
-            const subject = `Meu Design CandleVerse - ${aroma}`;
-            const body = `Olá! 🕯️\n\nCriei uma vela personalizada no CandleVerse:\n\n✨ Aroma: ${aroma}\n🎨 Cor: ${colorName}\n👤 Criado por: ${userName}\n\n🔗 Veja o design: ${designUrl}\n\nCriado com CandleVerse`;
-
-            // Opção 1: Email
-            const mailtoUrl = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-            
-            // Opção 2: WhatsApp
-            const whatsappText = `Olá! 🕯️ Criei uma vela personalizada no CandleVerse!\n\n✨ ${aroma} | 🎨 ${colorName}\n\n🔗 ${designUrl}`;
+            const whatsappText = `Olá! 🕯️ Criei uma vela personalizada no CandleVerse!\n\n✨ Aroma: ${aroma}\n🎨 Cor: ${colorName}\n👤 Por: ${userName}\n\nCriado com CandleVerse`;
             const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(whatsappText)}`;
 
-            // Mostrar opções
-            if (confirm('📧 Clique OK para enviar por Email ou CANCELAR para WhatsApp')) {
-                window.open(mailtoUrl, '_blank');
-            } else {
-                window.open(whatsappUrl, '_blank');
-            }
+            window.open(whatsappUrl, '_blank');
+            closeShareModal();
         }
 
-        // Resetar design
         function resetDesign() {
-            if (confirm('🔄 Tem certeza que deseja criar uma nova vela? As informações não salvas serão perdidas.')) {
-                // Resetar selects
+            if (confirm('🔄 Tem certeza que deseja criar uma nova vela?')) {
                 document.getElementById('color').selectedIndex = 0;
                 document.getElementById('aroma').selectedIndex = 0;
                 document.getElementById('container').selectedIndex = 0;
                 document.getElementById('size').selectedIndex = 0;
 
-                // Resetar inputs
                 document.getElementById('userName').value = '';
                 document.getElementById('userPhone').value = '';
                 document.getElementById('userEmail').value = '';
 
-                // Limpar erros
                 showError('userName', false);
                 showError('userPhone', false);
                 showError('userEmail', false);
 
-                // Esconder mensagem de sucesso
                 document.getElementById('successMessage').classList.remove('show');
-                
-                // Desabilitar botão compartilhar
                 document.getElementById('shareBtn').disabled = true;
-                document.getElementById('saveBtn').disabled = false;
 
-                // Resetar ID salvo
                 savedDesignId = null;
-
-                // Atualizar preview
                 updatePreview();
             }
         }
